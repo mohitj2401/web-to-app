@@ -2,7 +2,7 @@
     package="com.example.web_to_app">
    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="web_to_app"
+        android:label="Solarmovie"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

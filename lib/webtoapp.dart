@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:simple_progress_indicators/simple_progress_indicators.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -31,14 +29,14 @@ class _WebToAppState extends State<WebToApp> {
           onPageFinished: (String url) {},
           onWebResourceError: (WebResourceError error) {},
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.youtube.com/')) {
-              return NavigationDecision.prevent;
-            }
+            // if (request.url.startsWith('https://www.eayur.com')) {
             return NavigationDecision.navigate;
+            //   }
+            //   return NavigationDecision.prevent;
           },
         ),
       )
-      ..loadRequest(Uri.parse('https://flutter.dev'));
+      ..loadRequest(Uri.parse('https://www.eayur.com'));
     // TODO: implement initState
     super.initState();
   }
@@ -52,6 +50,8 @@ class _WebToAppState extends State<WebToApp> {
           WebViewWidget(controller: _controller),
           if (_progress != 1)
             ProgressBar(
+              height: 5,
+
               value: _progress,
               //specify only one: color or gradient
               //color:Colors.red,
